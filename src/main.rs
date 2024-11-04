@@ -103,6 +103,11 @@ fn main() {
         }
     }
 
+    if upper_limit == 0 {
+        eprintln!("You must provide an upper limit for the calculation that is at least 2.");
+        std::process::exit(1);
+    }
+
     // any index in the vector is gonna map to a positive odd number in order.
     let mut vector = BitVec::new(true, upper_limit / 2);
     vector.set(0, false); // 1 is not prime

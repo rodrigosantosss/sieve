@@ -15,11 +15,7 @@ impl BitVec {
                 } else {
                     std::usize::MIN
                 };
-                if len % BITS_PER_USIZE == 0 {
-                    len / BITS_PER_USIZE
-                } else {
-                    len / BITS_PER_USIZE + 1
-                }
+                (len + BITS_PER_USIZE - 1) / BITS_PER_USIZE
             ],
             len,
         }

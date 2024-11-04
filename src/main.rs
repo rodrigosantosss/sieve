@@ -42,7 +42,7 @@ fn count_primes(vector: BitVec, upper_limit: usize, default: bool) {
     if default {
         // this is the amount of bits that weren't used and are set as true
         // will only fail if the algorithm used to generate the vector accessed bits outside bounds
-        count -= 8 * std::mem::size_of::<usize>() * vector_len - len;
+        count -= BITS_PER_USIZE * vector_len - len;
     }
     println!("There are {count} primes up to {upper_limit}.");
 }
